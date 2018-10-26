@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package removeElement
 
 // func main() {
 // 	num := []int{1,2,3,4,5,6}
@@ -8,13 +6,12 @@ import "fmt"
 // }
 
 func removeElement(nums []int, val int) int {
-	i :=0
+	i := 0
 	count := len(nums)
-
-	for i<count {
-		if (nums[i] == val) {
+	for i < count {
+		if nums[i] == val {
 			count--
-			nums[i]= nums[count]
+			nums[i] = nums[count]
 		} else {
 			i++
 		}

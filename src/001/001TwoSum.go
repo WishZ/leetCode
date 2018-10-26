@@ -1,4 +1,4 @@
-package main
+package twoSum
 
 // func main() {
 // 	num := []int{1, 2, 3, 4, 7, 8, 9, 19}

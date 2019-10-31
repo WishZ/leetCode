@@ -1,9 +1,11 @@
-package twoSum
+package main
 
-// func main() {
-// 	num := []int{1, 2, 3, 4, 7, 8, 9, 19}
-// 	fmt.Println(twoSum(num, 20))
-// }
+import "fmt"
+
+func main() {
+	num := []int{1, 2, 3, 4, 7, 8, 9, 19}
+	fmt.Println(twoSum(num, 20))
+}
 
 func twoSum(num []int, target int) []int {
 	var arr []int

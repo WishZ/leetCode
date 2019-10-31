@@ -7,18 +7,15 @@ func main() {
 	fmt.Println(twoSum(num, 20))
 }
 
-func twoSum(num []int, target int) []int {
-	var arr []int
-	count := len(num)
-
-	for i := 0; i < count; i++ {
-		for j := i + 1; j < count; j++ {
-			if num[i]+num[j] == target {
-				arr = append(arr, i)
-				arr = append(arr, j)
-				return arr
-			}
+func twoSum(nums []int, target int) []int {
+	m := make(map[int]int)
+	for i, n := range nums {
+		x := target - n
+		if idx, ok := m[x]; ok {
+			return []int{idx, i}
 		}
+		m[n] = i
 	}
-	return arr
+
+	return []int{}
 }

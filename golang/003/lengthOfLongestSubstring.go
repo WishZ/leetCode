@@ -1,34 +1,24 @@
-package main
+package 003
 
-import (
-	"strings"
-)
-
-func main() {
-	length := lengthOfLongestSubstring("abcdefas")
-	println(length)
+func max(x, y int) int {
+	if x < y {
+		return y
+	}
+	return x
 }
+
 func lengthOfLongestSubstring(s string) int {
-	if len(s) == 0 {
-		return 0
+	var last [128]int
+	for i := 0; i < len(last); i++ {
+		last[i] = -1
 	}
-	var s1 string
-	println([]rune(s))
-	for m ,l := range []rune(s) {
-		println(m,string(l))
-	}
-	println(s[1])
-	println(string(s[1]))
-	left := 0
-	length := 0
+	var left int = -1
+	var ans int = 0
 	for i := 0; i < len(s); i++ {
-		if index := strings.IndexByte(s1, s[i]); index != -1 {
-			left += index + 1
-		}
-		s1 = s[left : i]
-		if len(s1) > length {
-			length = len(s1)
-		}
+		var si = int(s[i])
+		left = max(left, last[si])
+		last[si] = i
+		ans = Max(ans, i-left)
 	}
-	return length
+	return ans
 }

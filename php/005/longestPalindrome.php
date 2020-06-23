@@ -33,7 +33,7 @@ class Solution {
             }
         }
 
-        return substr($s,$strStart,$strEnd - $strLen + 1);
+        return substr($s,$strStart,$strEnd - $strStart + 1);
         
     }
 }

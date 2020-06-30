@@ -1,4 +1,4 @@
-package maxArea
+package maxarea
 
 func maxArea(height []int) int {
 	i := 0
@@ -7,10 +7,10 @@ func maxArea(height []int) int {
 	for i < j {
 		if height[i] < height[j] {
 			res = max(res, height[i]*(j-i))
-			i += 1
+			i++
 		} else {
 			res = max(res, height[j]*(j-i))
-			j -= 1
+			j--
 		}
 	}
 	return res
